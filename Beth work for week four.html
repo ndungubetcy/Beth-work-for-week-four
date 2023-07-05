@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Signup Form</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"><style>body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    text-align: center;
+  }
+  h1 {
+    margin-top: 50px;
+  }
+  #login-form, #signup-popup {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #0a2df8;
+    border-radius: 5px;
+    background-color: #1e06f0;
+  }
+  .hidden {
+    display: none;
+  }
+  #signup-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background-color: rgb(250, 250, 250);
+  }
+  #signup-form {
+    position: relative;
+    background-color: #eff2f3;
+    padding: 20px;
+  }
+  #close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  #signup-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f5f6fc;
+    color: #8eeb15;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <h1>Login and Signup Form</h1>
+
+  <div id="login-form">
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <div id="signup-popup" class="hidden">
+    <div id="signup-form">
+      <h2>Sign Up</h2>
+      <form>
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="submit" value="Sign Up">
+      </form>
+      <span id="close-btn">X</span>
+    </div>
+  </div>
+
+  <button id="signup-btn">Sign Up</button>
+
+  <script src="script.js">document.getElementById("signup-btn").addEventListener("click", function() {
+    document.getElementById("signup-popup").classList.remove("hidden");
+  });
+  
+  document.getElementById("close-btn").addEventListener("click", function() {
+    document.getElementById("signup-popup").classList.add("hidden");
+  });
+  </script>
+</body>
+</html>
